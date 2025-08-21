@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Simple navbar style */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+    }
+    .navbar h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .navbar button {
+      background: crimson;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .navbar button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar with Logout -->
+  <div class="navbar">
+    <h2>👨‍💼 Owner Dashboard</h2>
+    <button id="logoutOwner">Logout</button>
+  </div>
+
+  <main class="container">
+    <p>Welcome Owner! Here you can see worker timings and payments.</p>
+
+    <section id="ownerUI" class="card">
+      <div class="grid">
+        <div>
+          <h3>Settings</h3>
+          <label>Rate per hour (₹)</label>
+          <input id="rate"/>
+          <label>Factory Latitude</label>
+          <input id="lat"/>
+          <label>Factory Longitude</label>
+          <input id="lng"/>
+          <label>Radius (meters)</label>
+          <input id="radius"/>
+          <button id="saveSettings" class="primary">Save Settings</button>
+        </div>
+
+        <div>
+          <h3>Register Worker</h3>
+          <input id="wName" placeholder="Name"/>
+          <input id="wUser" placeholder="Username (phone)"/>
+          <input id="wPass" placeholder="Password/PIN"/>
+          <button id="addWorker">Add Worker</button>
+
+          <h3 style="margin-top:12px">Workers</h3>
+          <div id="workerList" class="list"></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:16px">Reports</h3>
+      <div class="row">
+        <button class="small range" data-range="daily">Daily</button>
+        <button class="small range" data-range="weekly">Weekly</button>
+        <button class="small range" data-range="monthly">Monthly</button>
+        <button id="refreshReports" class="small">Refresh</button>
+      </div>
+      <div id="sum" class="muted"></div>
+      <div id="rows" class="list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Logout functionality
+    document.getElementById("logoutOwner").addEventListener("click", () => {
+      alert("👋 Logged out successfully!");
+      window.location.href = "index.html"; // Redirect to login page
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worker Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar with Logout -->
+  <header class="navbar">
+    <h2>👷 Worker Dashboard</h2>
+    <button id="logoutWorker" class="btn-logout">Logout</button>
+  </header>
+
+  <main class="container">
+    <p>Welcome Worker! You can log your working hours here.</p>
+
+    <section id="workerUI" class="card">
+      <h2 id="hello">Worker</h2>
+      <div class="muted">
+        Rate: ₹<span id="wRate"></span>/hr · Radius: <span id="wRadius"></span>m
+      </div>
+
+      <div class="row" style="margin-top:8px">
+        <button id="checkin" class="green">Start Work (Check-in)</button>
+        <button id="checkout" class="red">End Work (Check-out)</button>
+        <button id="reportSelf" class="small">My Reports</button>
+      </div>
+
+      <div id="wmsg" class="muted"></div>
+      <div id="wreport" class="list" style="margin-top:8px"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Logout button ka action
+    document.getElementById("logoutWorker").addEventListener("click", () => {
+      window.location.href = "index.html"; // back to login
+    });
+  </script>
+</body>
+</html>
