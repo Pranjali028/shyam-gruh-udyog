@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://shyam-gruh-udyog.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Page loaded:", window.location.pathname);
