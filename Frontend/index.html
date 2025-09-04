@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Spices Production — Owner & Worker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="branding-top">
+    <img src="logo.jpg" alt="Firm Logo" class="firm-logo">
+    <h2 class="company-name">SHYAM GRUH UDYOG</h2>
+  </div>
+<header>
+  <h1>Worker Time And Payroll System</h1>
+</header>
+
+<main class="container">
+  <!-- Login -->
+  <section id="loginCard" class="card">
+    <h2>Login</h2>
+    <label>Role</label>
+    <select id="roleSel">
+      <option value="worker">Worker</option>
+      <option value="owner">Owner</option>
+    </select>
+    <label>Username</label>
+    <input type="text" id="username" placeholder="owner / worker username"/>
+    <label>Password</label>
+    <input id="password" type="password" placeholder="password"/>
+    <button id="loginBtn" onclick="func()">Login</button>
+    <p class="muted">Owner login: <b>owner / owner123</b> | Worker login: <b>worker / worker123</b></p>
+    <p id="msg"></p>
+  </section>
+</main>
+
+<footer>© Demo (MongoDB). Geofencing enforced at check-in/out.</footer>
+
+<script>
+  function func(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var role = document.getElementById("roleSel").value;
+
+    if(role === "owner"){
+      if ((username === "saurav" && password === "2233") || (username === "shubham" && password === "4455")){
+        alert("Login Sucessful! Owner");
+        window.location.assign("owner.html");
+      } else {
+        alert("Invalid owner username or password");
+      }
+    }
+
+    else if(role === "worker"){
+      if(username === "worker" && password === "456"){
+        alert("Login Successful! Worker");
+        window.location.assign("worker.html");
+      } else {
+        alert("Invalid worker username or password");
+      }
+    }
+    else{
+      alert("Plese select a valid role.");
+    }
+  }
+</script>
+<script src="script.js">
+  "http://localhost:3000"
+</script>
+  
+
+</script>
+</body>
+</html>
